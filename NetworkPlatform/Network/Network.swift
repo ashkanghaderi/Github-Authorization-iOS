@@ -9,26 +9,11 @@ final class Network<T: Decodable> {
     private let endPoint: String
     private let scheduler: ConcurrentDispatchQueueScheduler
     private var tokenString: String {
-        return "Bearer " + AuthorizationInfo.shared.accessToken
+        return "Bearer " //+ AuthorizationInfo.shared.accessToken
     }
     private var sharedHeaders: Dictionary<String,String> {
-        if AuthorizationInfo.shared.accessToken.isEmpty {
-          return ["uuid": AuthorizationInfo.shared.uuid,
-                  "DeviceType": Constants.Info.deviceType(),
-                  "DeviceName": Constants.Info.deviceName(),
-                  "osVersion": Constants.Info.osVersion(),
-                  "osName": Constants.Info.osType,
-                  "ConnectionType": Constants.Info.connectionType(),
-                  "AppVersion": Constants.Info.appVersion()]
-        }
-            return ["Authorization" : tokenString,
-                    "uuid": AuthorizationInfo.shared.uuid,
-                    "DeviceType": Constants.Info.deviceType(),
-                    "DeviceName": Constants.Info.deviceName(),
-                    "osVersion": Constants.Info.osVersion(),
-                    "osName": Constants.Info.osType,
-                    "ConnectionType": Constants.Info.connectionType(),
-                    "AppVersion": Constants.Info.appVersion()]
+       
+            return ["Authorization" : tokenString]
     }
     
     init(_ endPoint: String) {
@@ -79,9 +64,6 @@ final class Network<T: Decodable> {
                         print(String(bytes: json.1, encoding: .utf8) ?? "")
                         throw self?.handle(error: err, data: json.1, StatusCode: json.0.statusCode) ?? NSError(domain: "ERRRRR", code: 1010, userInfo: nil)
                     }
-                }else if 401 == json.0.statusCode {
-                    print("TOKEN EXPIRED")
-                    AuthorizationInfo.shared.tokenExpirationHandler(response: json.0)
                 }
                 throw self?.handle(data: json.1, StatusCode: json.0.statusCode) ?? NSError(domain: "ERRRRR", code: 1010, userInfo: nil)
             })
