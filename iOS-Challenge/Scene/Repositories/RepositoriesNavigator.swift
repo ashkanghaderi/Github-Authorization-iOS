@@ -11,6 +11,13 @@ class RepositoriesNavigator {
         self.navigationController = navigationController
     }
     
+    func setup() {
+        let repoVC = ReporitoriesViewController(nibName: "ReporitoriesViewController", bundle: nil)
+        repoVC.viewModel = RepositoriesViewModel(navigator: self, useCase: services.makeSearchRepositoryUseCase())
+        
+        navigationController.viewControllers = [repoVC]
+    }
+    
     
     func toSelected(Option option:RepositoryCellViewModel) {
        

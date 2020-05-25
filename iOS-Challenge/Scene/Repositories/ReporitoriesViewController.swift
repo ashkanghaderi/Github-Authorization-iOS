@@ -6,7 +6,7 @@ class ReporitoriesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var viewModel: RepositoriesViewModel!
+    var viewModel :  RepositoriesViewModel!
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -19,9 +19,9 @@ class ReporitoriesViewController: UIViewController {
 
     private func bindData(){
            assert(viewModel != nil)
-        let input = RepositoriesViewModel.Input(repositorySelection: tableView.rx.itemSelected.asDriver(), searchQuery: searchBar.rx.text.orEmpty.asDriver())
+        let input = RepositoriesViewModel.Input(repositorySelection: tableView.rx.itemSelected.asDriver(), searchQuery: searchBar.rx.text.orEmpty.asDriver(),searchTrigger: searchBar.rx.textDidBeginEditing.asDriver())
            let output = viewModel.transform(input: input)
-        
+       
         [output.repositories.drive(tableView.rx.items(cellIdentifier: "RepositoryViewCell", cellType: RepositoryViewCell.self)){ item, viewModel, cell in
             cell.bindData(withViewModel: viewModel)
             }

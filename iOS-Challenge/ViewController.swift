@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SafariServices
+import NetworkPlatform
 
 //let clientId = "your-clientId"
 let clientId = "04860a64b85b7438bf91"
@@ -18,11 +19,12 @@ let redirect_url = "challenge://app/callback"
 class ViewController: UIViewController {
 
     @IBOutlet weak var accessTokenLabel: UILabel!
+    private var networkUseCaseProvider: NetworkPlatform.UseCaseProvider?
     
-    
+       
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self.networkUseCaseProvider = NetworkPlatform.UseCaseProvider()
     }
 
     @IBAction func loginDidPress(_ sender: Any?) {
@@ -74,6 +76,16 @@ class ViewController: UIViewController {
                 switch response.result {
                 case .success(let accessToken):
                     self?.accessTokenLabel.text = accessToken.accessToken
+                    
+                    let mainNavigationController = MainNavigationController()
+                    
+                
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    appDelegate.window?.rootViewController = mainNavigationController
+                   
+                    
+                    RepositoriesNavigator(services: self?.networkUseCaseProvider as! UseCaseProvider, navigationController: mainNavigationController).setup()
+                    
                 case .failure(let error):
                     print(error)
                 }
