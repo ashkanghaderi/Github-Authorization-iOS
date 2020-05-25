@@ -1,30 +1,35 @@
-//
-//  ReporitoriesViewController.swift
-//  iOS-Challenge
-//
-//  Created by Catalina on 5/24/20.
-//  Copyright © 2020 Farshad Mousalou. All rights reserved.
-//
-
 import UIKit
+import RxSwift
 
 class ReporitoriesViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    var viewModel: RepositoriesViewModel!
+    let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        tableView.register(UINib(nibName: "RepositoryViewCell", bundle: nil), forCellReuseIdentifier: CellIds.cellId.rawValue)
+        
+        bindData()
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func bindData(){
+           assert(viewModel != nil)
+        let input = RepositoriesViewModel.Input(repositorySelection: tableView.rx.itemSelected.asDriver(), searchQuery: searchBar.rx.text.orEmpty.asDriver())
+           let output = viewModel.transform(input: input)
+        
+        [output.repositories.drive(tableView.rx.items(cellIdentifier: "RepositoryViewCell", cellType: RepositoryViewCell.self)){ item, viewModel, cell in
+            cell.bindData(withViewModel: viewModel)
+            }
+            ].forEach { (item) in
+                item.disposed(by: disposeBag)
+        }
+        
     }
-    */
+    
 
 }

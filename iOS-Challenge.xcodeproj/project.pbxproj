@@ -42,6 +42,9 @@
 		AD6B0FD5247B452A004158B2 /* Error+CustomResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6B0FD2247B4529004158B2 /* Error+CustomResponse.swift */; };
 		AD6B0FD6247B452A004158B2 /* Observable+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6B0FD3247B4529004158B2 /* Observable+Ext.swift */; };
 		AD6B0FD7247B452A004158B2 /* String+CustomTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6B0FD4247B4529004158B2 /* String+CustomTools.swift */; };
+		AD6B0FDA247BBB59004158B2 /* RepositoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6B0FD8247BBB59004158B2 /* RepositoryViewCell.swift */; };
+		AD6B0FDB247BBB59004158B2 /* RepositoryViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD6B0FD9247BBB59004158B2 /* RepositoryViewCell.xib */; };
+		AD6B0FDD247BBF68004158B2 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6B0FDC247BBF68004158B2 /* CustomCell.swift */; };
 		AD95A75D247AA57000B58056 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD95A754247AA57000B58056 /* Domain.framework */; };
 		AD95A764247AA57000B58056 /* DomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD95A763247AA57000B58056 /* DomainTests.swift */; };
 		AD95A766247AA57000B58056 /* Domain.h in Headers */ = {isa = PBXBuildFile; fileRef = AD95A756247AA57000B58056 /* Domain.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -215,6 +218,9 @@
 		AD6B0FD2247B4529004158B2 /* Error+CustomResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Error+CustomResponse.swift"; sourceTree = "<group>"; };
 		AD6B0FD3247B4529004158B2 /* Observable+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Ext.swift"; sourceTree = "<group>"; };
 		AD6B0FD4247B4529004158B2 /* String+CustomTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+CustomTools.swift"; sourceTree = "<group>"; };
+		AD6B0FD8247BBB59004158B2 /* RepositoryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewCell.swift; sourceTree = "<group>"; };
+		AD6B0FD9247BBB59004158B2 /* RepositoryViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryViewCell.xib; sourceTree = "<group>"; };
+		AD6B0FDC247BBF68004158B2 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		AD95A754247AA57000B58056 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD95A756247AA57000B58056 /* Domain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Domain.h; sourceTree = "<group>"; };
 		AD95A757247AA57000B58056 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -491,6 +497,7 @@
 				AD6B0FCF247B44E1004158B2 /* ActivityIndicator.swift */,
 				AD6B0FCE247B44E1004158B2 /* ErrorTracker.swift */,
 				AD6B0FC8247B3A69004158B2 /* ViewModelType.swift */,
+				AD6B0FDC247BBF68004158B2 /* CustomCell.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -499,6 +506,8 @@
 			isa = PBXGroup;
 			children = (
 				AD6B0FCB247B414E004158B2 /* VM */,
+				AD6B0FD8247BBB59004158B2 /* RepositoryViewCell.swift */,
+				AD6B0FD9247BBB59004158B2 /* RepositoryViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -830,6 +839,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				608D18EB23E091DC00BFE7C7 /* LaunchScreen.storyboard in Resources */,
+				AD6B0FDB247BBB59004158B2 /* RepositoryViewCell.xib in Resources */,
 				AD6B0FC1247B393F004158B2 /* ReporitoriesViewController.xib in Resources */,
 				608D18E823E091DC00BFE7C7 /* Assets.xcassets in Resources */,
 				608D18E623E091DB00BFE7C7 /* Main.storyboard in Resources */,
@@ -1116,9 +1126,11 @@
 				60F3961E23E997E400AA2913 /* AccessTokenResponse.swift in Sources */,
 				AD6B0FD6247B452A004158B2 /* Observable+Ext.swift in Sources */,
 				AD6B0FC6247B3A25004158B2 /* RepositoriesViewModel.swift in Sources */,
+				AD6B0FDD247BBF68004158B2 /* CustomCell.swift in Sources */,
 				AD6B0FCD247B4173004158B2 /* RepositoryCellViewModel.swift in Sources */,
 				AD6B0FD1247B44E2004158B2 /* ActivityIndicator.swift in Sources */,
 				AD6B0FC9247B3A69004158B2 /* ViewModelType.swift in Sources */,
+				AD6B0FDA247BBB59004158B2 /* RepositoryViewCell.swift in Sources */,
 				AD6B0FC3247B3977004158B2 /* RepositoriesNavigator.swift in Sources */,
 				AD6B0FD5247B452A004158B2 /* Error+CustomResponse.swift in Sources */,
 				AD6B0FC0247B393F004158B2 /* ReporitoriesViewController.swift in Sources */,
