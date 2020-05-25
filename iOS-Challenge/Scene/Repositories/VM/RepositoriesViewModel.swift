@@ -19,18 +19,21 @@ final class RepositoriesViewModel: ViewModelType {
         let activityIndicator = ActivityIndicator()
         let errorTracker = ErrorTracker()
         
+      
+        
         let repoList = input.searchTrigger.withLatestFrom(input.searchQuery).map { (query) in
-                        
+            return query
+        }.flatMapFirst({ [unowned self](query) in
+            
             let result = self.useCase.searchRepository(query: query).trackActivity(activityIndicator).trackError(errorTracker).asDriverOnErrorJustComplete()
-            
-            let items = result.map { (response) -> [RepositoryCellViewModel] in
-                return response.repositories.compactMap({ (item) -> RepositoryCellViewModel in
-                    return RepositoryCellViewModel(with: item)
-                })
-            }
-            
-            return items
+        
+        let items = result.map { (response) -> [RepositoryCellViewModel] in
+            return response.repositories.compactMap({ (item) -> RepositoryCellViewModel in
+                return RepositoryCellViewModel(with: item)
+            })
         }
+            return items
+        })
         
        
         
