@@ -19,25 +19,25 @@ final class RepositoriesViewModel: ViewModelType {
         let activityIndicator = ActivityIndicator()
         let errorTracker = ErrorTracker()
         
-      
+//        let repoList = input.searchTrigger.withLatestFrom(input.searchQuery).flatMap({ (value) -> Driver<RepositoriesModel.Response> in
+//            return  self.useCase.searchRepository(query: value).trackActivity(activityIndicator).trackError(errorTracker).asDriverOnErrorJustComplete()
+//        }).map{ result in
+//            return result.repositories.compactMap({ (item) -> RepositoryCellViewModel in
+//               return RepositoryCellViewModel(with: item)
+//           })
+//
+//        }
         
-        let repoList = input.searchTrigger.withLatestFrom(input.searchQuery).map { (query) in
-            return query
-        }.flatMapFirst({ [unowned self](query) in
-            
-            let result = self.useCase.searchRepository(query: query).trackActivity(activityIndicator).trackError(errorTracker).asDriverOnErrorJustComplete()
-        
-        let items = result.map { (response) -> [RepositoryCellViewModel] in
-            return response.repositories.compactMap({ (item) -> RepositoryCellViewModel in
-                return RepositoryCellViewModel(with: item)
-            })
+        let r = input.searchQuery.asDriver().distinctUntilChanged().flatMap({(value) -> Driver<RepositoriesModel.Response> in
+            return  self.useCase.searchRepository(query: value).trackActivity(activityIndicator).trackError(errorTracker).asDriverOnErrorJustComplete()
+        }).map{ result in
+            return result.repositories.compactMap({ (item) -> RepositoryCellViewModel in
+               return RepositoryCellViewModel(with: item)
+           })
+           
         }
-            return items
-        })
         
-       
-        
-        return Output(isFetching: activityIndicator.asDriver(), repositories: repoList  , error: errorTracker.asDriver())
+        return Output(isFetching: activityIndicator.asDriver(), repositories: r  , error: errorTracker.asDriver())
     }
     
     
