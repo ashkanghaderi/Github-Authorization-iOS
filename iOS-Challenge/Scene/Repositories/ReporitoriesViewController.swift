@@ -22,7 +22,7 @@ class ReporitoriesViewController: UIViewController {
         let input = RepositoriesViewModel.Input(repositorySelection: tableView.rx.itemSelected.asDriver(), searchQuery: searchBar.rx.text.orEmpty.asDriver(),searchTrigger: searchBar.rx.textDidBeginEditing.asDriver())
            let output = viewModel.transform(input: input)
        
-        [output.repositories.drive(tableView.rx.items(cellIdentifier: "RepositoryViewCell", cellType: RepositoryViewCell.self)){ item, viewModel, cell in
+        [output.repositories.drive(tableView.rx.items(cellIdentifier: CellIds.cellId.rawValue, cellType: RepositoryViewCell.self)){ item, viewModel, cell in
             cell.bindData(withViewModel: viewModel)
             }
             ].forEach { (item) in

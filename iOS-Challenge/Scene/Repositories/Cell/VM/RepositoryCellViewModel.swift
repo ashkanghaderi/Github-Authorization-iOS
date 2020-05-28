@@ -10,8 +10,8 @@ public struct RepositoryCellViewModel {
     public init(with response: RepositoryItem){
         self.id = response.id
         self.name = response.name
-        self.description = response.description
-        self.language = response.language
+        self.description = response.description ?? ""
+        self.language = response.language ?? ""
         self.owner = response.owner
         
     }

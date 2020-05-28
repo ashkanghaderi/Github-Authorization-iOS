@@ -19,6 +19,7 @@ target 'iOS-Challenge' do
   rx_cocoa
   rx_swift
   pod 'RxDataSources', '~> 3.0'
+  pod 'KeychainSwift'
   # Pods for iOS-Challenge
 
   target 'iOS-ChallengeTests' do
@@ -51,7 +52,7 @@ target 'NetworkPlatform' do
   rx_swift
   pod 'Alamofire', '~> 4.9.1'
   pod 'RxAlamofire', '~> 4.4.1'
-  
+  pod 'KeychainSwift'
   target 'NetworkPlatformTests' do
     inherit! :search_paths
     test_pods

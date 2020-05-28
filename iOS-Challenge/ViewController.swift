@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SafariServices
 import NetworkPlatform
+import KeychainSwift
 
 //let clientId = "your-clientId"
 let clientId = "04860a64b85b7438bf91"
@@ -21,7 +22,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var accessTokenLabel: UILabel!
     private var networkUseCaseProvider: NetworkPlatform.UseCaseProvider?
     
-       
+    let keychain = KeychainSwift()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.networkUseCaseProvider = NetworkPlatform.UseCaseProvider()
@@ -76,6 +77,8 @@ class ViewController: UIViewController {
                 switch response.result {
                 case .success(let accessToken):
                     self?.accessTokenLabel.text = accessToken.accessToken
+                    
+                    self?.keychain.set((accessToken.accessToken ?? ""), forKey: "AccessToken")
                     
                     let mainNavigationController = MainNavigationController()
                     

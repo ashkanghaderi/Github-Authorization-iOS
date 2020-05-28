@@ -28,16 +28,16 @@ final class RepositoriesViewModel: ViewModelType {
 //
 //        }
         
-        let r = input.searchQuery.asDriver().distinctUntilChanged().flatMap({(value) -> Driver<RepositoriesModel.Response> in
+        let repoList = input.searchQuery.asDriver().distinctUntilChanged().flatMap({(value) -> Driver<RepositoriesModel.Response> in
             return  self.useCase.searchRepository(query: value).trackActivity(activityIndicator).trackError(errorTracker).asDriverOnErrorJustComplete()
         }).map{ result in
-            return result.repositories.compactMap({ (item) -> RepositoryCellViewModel in
+            return result.items.compactMap({ (item) -> RepositoryCellViewModel in
                return RepositoryCellViewModel(with: item)
            })
            
         }
         
-        return Output(isFetching: activityIndicator.asDriver(), repositories: r  , error: errorTracker.asDriver())
+        return Output(isFetching: activityIndicator.asDriver(), repositories: repoList  , error: errorTracker.asDriver())
     }
     
     

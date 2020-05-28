@@ -13,7 +13,7 @@ public final class RepositorySearchNetwork {
     
     public func searchRepositories(query:String) -> Observable<RepositoriesModel.Response>{
 
-        let url = Constants.EndPoints.search.rawValue + "?" + query
+        let url = Route.RepositoryServiceRoute(.search).url + "?q=" + query + "&sort=stars&order=desc"
         return network.getItem(url)
     }
     

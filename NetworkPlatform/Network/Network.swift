@@ -3,13 +3,15 @@ import Domain
 import Alamofire
 import RxAlamofire
 import RxSwift
+import KeychainSwift
 
 final class Network<T: Decodable> {
     
     private let endPoint: String
     private let scheduler: ConcurrentDispatchQueueScheduler
+    let keychain = KeychainSwift()
     private var tokenString: String {
-        return "Bearer " //+ AuthorizationInfo.shared.accessToken
+        return "Bearer " + (keychain.get("AccessToken") ?? "")
     }
     private var sharedHeaders: Dictionary<String,String> {
        
