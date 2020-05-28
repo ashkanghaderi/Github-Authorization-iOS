@@ -5,6 +5,6 @@ public enum CommitsModel: InteractiveModelType {
     }
     
     public struct Response: Codable {
-        public let commits: [CommitItem]
+        public let commit: [CommitItem]
     }
 }

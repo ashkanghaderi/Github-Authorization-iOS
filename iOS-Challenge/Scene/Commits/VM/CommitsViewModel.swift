@@ -4,7 +4,7 @@ import RxCocoa
 import NetworkPlatform
 import Domain
 
-final class RepositoriesViewModel: ViewModelType {
+final class CommitsViewModel: ViewModelType {
     
     private let navigator: RepositoriesNavigator
     private let useCase: Domain.SearchRepositoryUseCase
@@ -19,9 +19,8 @@ final class RepositoriesViewModel: ViewModelType {
         let activityIndicator = ActivityIndicator()
         let errorTracker = ErrorTracker()
         
-        let repoList = input.searchQuery.asDriver().distinctUntilChanged().flatMap({(value) -> Driver<RepositoriesModel.Response> in
-            return  self.useCase.searchRepository(query: value).trackActivity(activityIndicator).trackError(errorTracker).asDriverOnErrorJustComplete()
-        }).map{ result in
+        let repoList =  self.useCase.searchRepository(query: value).trackActivity(activityIndicator).trackError(errorTracker).asDriverOnErrorJustComplete()
+        .map{ result in
             return result.items.compactMap({ (item) -> RepositoryCellViewModel in
                return RepositoryCellViewModel(with: item)
            })
@@ -34,16 +33,17 @@ final class RepositoriesViewModel: ViewModelType {
     
 }
 
-extension RepositoriesViewModel {
+extension CommitsViewModel {
     struct Input {
-        let repositorySelection: Driver<IndexPath>
-        let searchQuery: Driver<String>
-        let searchTrigger: Driver<Void>
+        let profileTrigger: Driver<Void>
+        let backTrigger: Driver<Void>
     }
     
     struct Output {
         let isFetching: Driver<Bool>
-        let repositories: Driver<[RepositoryCellViewModel]>
+        let commits: Driver<[CommitsCellViewModel]>
         let error: Driver<Error>
+        let back: Driver<Void>
+        let profile: Driver<Void>
     }
 }

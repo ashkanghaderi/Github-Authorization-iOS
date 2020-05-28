@@ -21,6 +21,14 @@
 		60F3961E23E997E400AA2913 /* AccessTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F3961D23E997E400AA2913 /* AccessTokenResponse.swift */; };
 		A694707816F411077F7B7BFF /* Pods_NetworkPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3C3B4E83450FB7E6CB2B8D /* Pods_NetworkPlatform.framework */; };
 		AD5D578224802144007575B6 /* TableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5D578124802144007575B6 /* TableView+Ext.swift */; };
+		AD6078232480605C002FE6C4 /* CommitsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6078212480605C002FE6C4 /* CommitsController.swift */; };
+		AD6078242480605C002FE6C4 /* CommitsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD6078222480605C002FE6C4 /* CommitsController.xib */; };
+		AD607826248060B3002FE6C4 /* CommitsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD607825248060B3002FE6C4 /* CommitsNavigator.swift */; };
+		AD607828248060CB002FE6C4 /* CommitsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD607827248060CB002FE6C4 /* CommitsViewModel.swift */; };
+		AD60782D24806A26002FE6C4 /* CommitViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60782B24806A26002FE6C4 /* CommitViewCell.swift */; };
+		AD60782E24806A26002FE6C4 /* CommitViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD60782C24806A26002FE6C4 /* CommitViewCell.xib */; };
+		AD60783024806A41002FE6C4 /* CommitsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60782F24806A41002FE6C4 /* CommitsCellViewModel.swift */; };
+		AD60783224806DD7002FE6C4 /* CommitActorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60783124806DD7002FE6C4 /* CommitActorItem.swift */; };
 		AD6B0FA3247AD7DF004158B2 /* UseCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6B0FA2247AD7DF004158B2 /* UseCaseProvider.swift */; };
 		AD6B0FA5247AD95E004158B2 /* AuthorizationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6B0FA4247AD95E004158B2 /* AuthorizationUseCase.swift */; };
 		AD6B0FA7247ADEDB004158B2 /* RepositoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6B0FA6247ADEDB004158B2 /* RepositoriesModel.swift */; };
@@ -199,6 +207,14 @@
 		87B6293AD8B0C1F3477542F8 /* Pods-NetworkPlatformTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkPlatformTests.release.xcconfig"; path = "Target Support Files/Pods-NetworkPlatformTests/Pods-NetworkPlatformTests.release.xcconfig"; sourceTree = "<group>"; };
 		AB16E9A7B1800A0A54D51034 /* Pods-NetworkPlatform.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkPlatform.debug.xcconfig"; path = "Target Support Files/Pods-NetworkPlatform/Pods-NetworkPlatform.debug.xcconfig"; sourceTree = "<group>"; };
 		AD5D578124802144007575B6 /* TableView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableView+Ext.swift"; sourceTree = "<group>"; };
+		AD6078212480605C002FE6C4 /* CommitsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitsController.swift; sourceTree = "<group>"; };
+		AD6078222480605C002FE6C4 /* CommitsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommitsController.xib; sourceTree = "<group>"; };
+		AD607825248060B3002FE6C4 /* CommitsNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitsNavigator.swift; sourceTree = "<group>"; };
+		AD607827248060CB002FE6C4 /* CommitsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitsViewModel.swift; sourceTree = "<group>"; };
+		AD60782B24806A26002FE6C4 /* CommitViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitViewCell.swift; sourceTree = "<group>"; };
+		AD60782C24806A26002FE6C4 /* CommitViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommitViewCell.xib; sourceTree = "<group>"; };
+		AD60782F24806A41002FE6C4 /* CommitsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitsCellViewModel.swift; sourceTree = "<group>"; };
+		AD60783124806DD7002FE6C4 /* CommitActorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitActorItem.swift; sourceTree = "<group>"; };
 		AD6B0FA2247AD7DF004158B2 /* UseCaseProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UseCaseProvider.swift; sourceTree = "<group>"; };
 		AD6B0FA4247AD95E004158B2 /* AuthorizationUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationUseCase.swift; sourceTree = "<group>"; };
 		AD6B0FA6247ADEDB004158B2 /* RepositoriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesModel.swift; sourceTree = "<group>"; };
@@ -420,6 +436,32 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AD6078202480602A002FE6C4 /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				AD607827248060CB002FE6C4 /* CommitsViewModel.swift */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
+		AD607829248069EE002FE6C4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				AD60782A248069FB002FE6C4 /* VM */,
+				AD60782B24806A26002FE6C4 /* CommitViewCell.swift */,
+				AD60782C24806A26002FE6C4 /* CommitViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		AD60782A248069FB002FE6C4 /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				AD60782F24806A41002FE6C4 /* CommitsCellViewModel.swift */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
 		AD6B0FA1247AD778004158B2 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
@@ -473,6 +515,11 @@
 		AD6B0FBC247B386C004158B2 /* Commits */ = {
 			isa = PBXGroup;
 			children = (
+				AD607829248069EE002FE6C4 /* Cell */,
+				AD6078202480602A002FE6C4 /* VM */,
+				AD6078212480605C002FE6C4 /* CommitsController.swift */,
+				AD6078222480605C002FE6C4 /* CommitsController.xib */,
+				AD607825248060B3002FE6C4 /* CommitsNavigator.swift */,
 			);
 			path = Commits;
 			sourceTree = "<group>";
@@ -609,6 +656,7 @@
 				AD6B0FAA247AE23D004158B2 /* RepositoryItem.swift */,
 				AD6B0FAC247AE32C004158B2 /* CommitItem.swift */,
 				AD6B0FAE247B088C004158B2 /* UserModel.swift */,
+				AD60783124806DD7002FE6C4 /* CommitActorItem.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -845,9 +893,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				608D18EB23E091DC00BFE7C7 /* LaunchScreen.storyboard in Resources */,
+				AD60782E24806A26002FE6C4 /* CommitViewCell.xib in Resources */,
 				AD6B0FDB247BBB59004158B2 /* RepositoryViewCell.xib in Resources */,
 				AD6B0FC1247B393F004158B2 /* ReporitoriesViewController.xib in Resources */,
 				608D18E823E091DC00BFE7C7 /* Assets.xcassets in Resources */,
+				AD6078242480605C002FE6C4 /* CommitsController.xib in Resources */,
 				608D18E623E091DB00BFE7C7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1126,23 +1176,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD607826248060B3002FE6C4 /* CommitsNavigator.swift in Sources */,
 				608D18E323E091DB00BFE7C7 /* ViewController.swift in Sources */,
 				AD6B0FD7247B452A004158B2 /* String+CustomTools.swift in Sources */,
+				AD60782D24806A26002FE6C4 /* CommitViewCell.swift in Sources */,
 				608D18DF23E091DB00BFE7C7 /* AppDelegate.swift in Sources */,
 				60F3961E23E997E400AA2913 /* AccessTokenResponse.swift in Sources */,
 				AD6B0FD6247B452A004158B2 /* Observable+Ext.swift in Sources */,
+				AD6078232480605C002FE6C4 /* CommitsController.swift in Sources */,
 				AD6B0FC6247B3A25004158B2 /* RepositoriesViewModel.swift in Sources */,
 				AD6B0FDD247BBF68004158B2 /* CustomCell.swift in Sources */,
 				AD6B0FCD247B4173004158B2 /* RepositoryCellViewModel.swift in Sources */,
 				AD6B0FE1247BED01004158B2 /* MainNavigationController.swift in Sources */,
 				AD6B0FD1247B44E2004158B2 /* ActivityIndicator.swift in Sources */,
 				AD6B0FC9247B3A69004158B2 /* ViewModelType.swift in Sources */,
+				AD607828248060CB002FE6C4 /* CommitsViewModel.swift in Sources */,
 				AD6B0FDA247BBB59004158B2 /* RepositoryViewCell.swift in Sources */,
 				AD6B0FC3247B3977004158B2 /* RepositoriesNavigator.swift in Sources */,
 				AD5D578224802144007575B6 /* TableView+Ext.swift in Sources */,
 				AD6B0FD5247B452A004158B2 /* Error+CustomResponse.swift in Sources */,
 				AD6B0FC0247B393F004158B2 /* ReporitoriesViewController.swift in Sources */,
 				60F3961C23E996C000AA2913 /* Alamofire+Decodable.swift in Sources */,
+				AD60783024806A41002FE6C4 /* CommitsCellViewModel.swift in Sources */,
 				AD6B0FD0247B44E2004158B2 /* ErrorTracker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1180,6 +1235,7 @@
 				AD6B0FA5247AD95E004158B2 /* AuthorizationUseCase.swift in Sources */,
 				AD6B0FA9247ADF27004158B2 /* CommitsModel.swift in Sources */,
 				AD6B0FA7247ADEDB004158B2 /* RepositoriesModel.swift in Sources */,
+				AD60783224806DD7002FE6C4 /* CommitActorItem.swift in Sources */,
 				AD6B0FAB247AE23D004158B2 /* RepositoryItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
