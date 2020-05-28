@@ -10,6 +10,21 @@ import UIKit
 
 class RepositoryViewCell : UITableViewCell  {
 
+    @IBOutlet weak var clipingView: UIView!{
+        didSet {
+            
+            clipingView.layer.masksToBounds = true
+        }
+    }
+    @IBOutlet weak var containerView: UIView!{
+        didSet {
+            
+            containerView.layer.shadowOpacity = 1
+            containerView.layer.shadowRadius = 2
+            containerView.layer.shadowColor = UIColor.lightGray.cgColor
+            containerView.layer.shadowOffset = CGSize(width: 3, height: 3)
+        }
+    }
     @IBOutlet weak var repoLang: UILabel!
     @IBOutlet weak var repoDesc: UILabel!
     @IBOutlet weak var repoName: UILabel!

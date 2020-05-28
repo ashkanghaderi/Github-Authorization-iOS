@@ -3,7 +3,13 @@ import RxSwift
 
 class ReporitoriesViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!{
+        didSet {
+            tableView.rowHeight = UITableView.automaticDimension
+            tableView.estimatedRowHeight = 120
+            tableView.customStyle()
+        }
+    }
     @IBOutlet weak var searchBar: UISearchBar!
     
     var viewModel :  RepositoriesViewModel!
