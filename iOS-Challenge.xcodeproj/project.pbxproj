@@ -32,8 +32,14 @@
 		AD607834248107D7002FE6C4 /* CommitsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD607833248107D7002FE6C4 /* CommitsUseCase.swift */; };
 		AD60783624810F4A002FE6C4 /* CommitsNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60783524810F4A002FE6C4 /* CommitsNetwork.swift */; };
 		AD60783824811071002FE6C4 /* CommitsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60783724811071002FE6C4 /* CommitsUseCase.swift */; };
+		AD60783C248146AD002FE6C4 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60783A248146AD002FE6C4 /* ProfileController.swift */; };
+		AD60783D248146AD002FE6C4 /* ProfileController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD60783B248146AD002FE6C4 /* ProfileController.xib */; };
+		AD60783F248146EE002FE6C4 /* ProfileNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60783E248146EE002FE6C4 /* ProfileNavigator.swift */; };
+		AD607841248147C0002FE6C4 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD607840248147C0002FE6C4 /* ProfileViewModel.swift */; };
+		AD60784324814B35002FE6C4 /* ProfileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60784224814B35002FE6C4 /* ProfileUseCase.swift */; };
+		AD60784524814B84002FE6C4 /* ProfileNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60784424814B84002FE6C4 /* ProfileNetwork.swift */; };
+		AD60784724815184002FE6C4 /* ImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60784624815184002FE6C4 /* ImageView+Ext.swift */; };
 		AD6B0FA3247AD7DF004158B2 /* UseCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6B0FA2247AD7DF004158B2 /* UseCaseProvider.swift */; };
-		AD6B0FA5247AD95E004158B2 /* AuthorizationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6B0FA4247AD95E004158B2 /* AuthorizationUseCase.swift */; };
 		AD6B0FA7247ADEDB004158B2 /* RepositoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6B0FA6247ADEDB004158B2 /* RepositoriesModel.swift */; };
 		AD6B0FA9247ADF27004158B2 /* CommitsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6B0FA8247ADF27004158B2 /* CommitsModel.swift */; };
 		AD6B0FAB247AE23D004158B2 /* RepositoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6B0FAA247AE23D004158B2 /* RepositoryItem.swift */; };
@@ -221,8 +227,14 @@
 		AD607833248107D7002FE6C4 /* CommitsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitsUseCase.swift; sourceTree = "<group>"; };
 		AD60783524810F4A002FE6C4 /* CommitsNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitsNetwork.swift; sourceTree = "<group>"; };
 		AD60783724811071002FE6C4 /* CommitsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitsUseCase.swift; sourceTree = "<group>"; };
+		AD60783A248146AD002FE6C4 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		AD60783B248146AD002FE6C4 /* ProfileController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileController.xib; sourceTree = "<group>"; };
+		AD60783E248146EE002FE6C4 /* ProfileNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNavigator.swift; sourceTree = "<group>"; };
+		AD607840248147C0002FE6C4 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		AD60784224814B35002FE6C4 /* ProfileUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUseCase.swift; sourceTree = "<group>"; };
+		AD60784424814B84002FE6C4 /* ProfileNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileNetwork.swift; sourceTree = "<group>"; };
+		AD60784624815184002FE6C4 /* ImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+Ext.swift"; sourceTree = "<group>"; };
 		AD6B0FA2247AD7DF004158B2 /* UseCaseProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UseCaseProvider.swift; sourceTree = "<group>"; };
-		AD6B0FA4247AD95E004158B2 /* AuthorizationUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationUseCase.swift; sourceTree = "<group>"; };
 		AD6B0FA6247ADEDB004158B2 /* RepositoriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesModel.swift; sourceTree = "<group>"; };
 		AD6B0FA8247ADF27004158B2 /* CommitsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitsModel.swift; sourceTree = "<group>"; };
 		AD6B0FAA247AE23D004158B2 /* RepositoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryItem.swift; sourceTree = "<group>"; };
@@ -468,13 +480,21 @@
 			path = VM;
 			sourceTree = "<group>";
 		};
+		AD60783924814676002FE6C4 /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				AD607840248147C0002FE6C4 /* ProfileViewModel.swift */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
 		AD6B0FA1247AD778004158B2 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				AD6B0FA4247AD95E004158B2 /* AuthorizationUseCase.swift */,
 				AD6B0FA2247AD7DF004158B2 /* UseCaseProvider.swift */,
 				AD6B0FB6247B2C83004158B2 /* SearchRepositoryUseCase.swift */,
 				AD607833248107D7002FE6C4 /* CommitsUseCase.swift */,
+				AD60784224814B35002FE6C4 /* ProfileUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -484,6 +504,7 @@
 			children = (
 				AD6B0FB1247B1ACF004158B2 /* RepositorySearchNetwork.swift */,
 				AD60783524810F4A002FE6C4 /* CommitsNetwork.swift */,
+				AD60784424814B84002FE6C4 /* ProfileNetwork.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -536,6 +557,10 @@
 		AD6B0FBD247B3887004158B2 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				AD60783924814676002FE6C4 /* VM */,
+				AD60783A248146AD002FE6C4 /* ProfileController.swift */,
+				AD60783B248146AD002FE6C4 /* ProfileController.xib */,
+				AD60783E248146EE002FE6C4 /* ProfileNavigator.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -560,6 +585,7 @@
 				AD6B0FC8247B3A69004158B2 /* ViewModelType.swift */,
 				AD6B0FDC247BBF68004158B2 /* CustomCell.swift */,
 				AD5D578124802144007575B6 /* TableView+Ext.swift */,
+				AD60784624815184002FE6C4 /* ImageView+Ext.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -904,6 +930,7 @@
 				608D18EB23E091DC00BFE7C7 /* LaunchScreen.storyboard in Resources */,
 				AD60782E24806A26002FE6C4 /* CommitViewCell.xib in Resources */,
 				AD6B0FDB247BBB59004158B2 /* RepositoryViewCell.xib in Resources */,
+				AD60783D248146AD002FE6C4 /* ProfileController.xib in Resources */,
 				AD6B0FC1247B393F004158B2 /* ReporitoriesViewController.xib in Resources */,
 				608D18E823E091DC00BFE7C7 /* Assets.xcassets in Resources */,
 				AD6078242480605C002FE6C4 /* CommitsController.xib in Resources */,
@@ -1195,8 +1222,11 @@
 				AD6078232480605C002FE6C4 /* CommitsController.swift in Sources */,
 				AD6B0FC6247B3A25004158B2 /* RepositoriesViewModel.swift in Sources */,
 				AD6B0FDD247BBF68004158B2 /* CustomCell.swift in Sources */,
+				AD607841248147C0002FE6C4 /* ProfileViewModel.swift in Sources */,
+				AD60784724815184002FE6C4 /* ImageView+Ext.swift in Sources */,
 				AD6B0FCD247B4173004158B2 /* RepositoryCellViewModel.swift in Sources */,
 				AD6B0FE1247BED01004158B2 /* MainNavigationController.swift in Sources */,
+				AD60783F248146EE002FE6C4 /* ProfileNavigator.swift in Sources */,
 				AD6B0FD1247B44E2004158B2 /* ActivityIndicator.swift in Sources */,
 				AD6B0FC9247B3A69004158B2 /* ViewModelType.swift in Sources */,
 				AD607828248060CB002FE6C4 /* CommitsViewModel.swift in Sources */,
@@ -1208,6 +1238,7 @@
 				60F3961C23E996C000AA2913 /* Alamofire+Decodable.swift in Sources */,
 				AD60783024806A41002FE6C4 /* CommitsCellViewModel.swift in Sources */,
 				AD6B0FD0247B44E2004158B2 /* ErrorTracker.swift in Sources */,
+				AD60783C248146AD002FE6C4 /* ProfileController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1240,9 +1271,9 @@
 				AD95A7B9247AB18D00B58056 /* ErrorTypes.swift in Sources */,
 				AD6B0FAF247B088C004158B2 /* UserModel.swift in Sources */,
 				AD95A7B8247AB18D00B58056 /* Constants.swift in Sources */,
+				AD60784324814B35002FE6C4 /* ProfileUseCase.swift in Sources */,
 				AD6B0FA3247AD7DF004158B2 /* UseCaseProvider.swift in Sources */,
 				AD6B0FAD247AE32C004158B2 /* CommitItem.swift in Sources */,
-				AD6B0FA5247AD95E004158B2 /* AuthorizationUseCase.swift in Sources */,
 				AD6B0FA9247ADF27004158B2 /* CommitsModel.swift in Sources */,
 				AD6B0FA7247ADEDB004158B2 /* RepositoriesModel.swift in Sources */,
 				AD60783224806DD7002FE6C4 /* CommitActorItem.swift in Sources */,
@@ -1263,6 +1294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD6B0FB2247B1ACF004158B2 /* RepositorySearchNetwork.swift in Sources */,
+				AD60784524814B84002FE6C4 /* ProfileNetwork.swift in Sources */,
 				AD60783624810F4A002FE6C4 /* CommitsNetwork.swift in Sources */,
 				AD6B0FB9247B2FBF004158B2 /* SearchRepositoryUseCase.swift in Sources */,
 				AD95A7AD247AACD700B58056 /* Network.swift in Sources */,
