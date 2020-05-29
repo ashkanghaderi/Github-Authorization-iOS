@@ -11,19 +11,19 @@ class CommitsNavigator {
         self.navigationController = navigationController
     }
     
-    func setup() {
+    func setup(userName: String,repoName: String) {
         let commitVC = CommitsController(nibName: "CommitsController", bundle: nil)
-        commitVC.viewModel = CommitsViewModel(navigator: self, useCase: services.makeSearchRepositoryUseCase())
+        commitVC.viewModel = CommitsViewModel(navigator: self, useCase: services.makeCommitsUseCase(),userName: userName,repoName: repoName)
         
         navigationController.pushViewController(commitVC, animated: true)
     }
     
-    
-    func toSelected(Option option:RepositoryCellViewModel) {
-       
+    func back(){
+        navigationController.popViewController(animated: true)
     }
     
-    
+    func toProfile(){}
+      
     func toError(error: Error) {
         
     }

@@ -30,7 +30,7 @@ class ReporitoriesViewController: UIViewController {
        
         [output.repositories.drive(tableView.rx.items(cellIdentifier: CellIds.cellId.rawValue, cellType: RepositoryViewCell.self)){ item, viewModel, cell in
             cell.bindData(withViewModel: viewModel)
-            }
+            },output.isFetching.drive(),output.error.drive(),output.selectedRepository.drive()
             ].forEach { (item) in
                 item.disposed(by: disposeBag)
         }

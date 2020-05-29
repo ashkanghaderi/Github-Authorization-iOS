@@ -6,28 +6,40 @@ import Domain
 
 final class CommitsViewModel: ViewModelType {
     
-    private let navigator: RepositoriesNavigator
-    private let useCase: Domain.SearchRepositoryUseCase
-    private(set) var repositoryCount = 0
+    private let navigator: CommitsNavigator
+    private let useCase: Domain.CommitsUseCase
+    private(set) var commitsCount = 0
+    private(set) var userName: String
+    private(set) var repoName: String
     
-    init(navigator: RepositoriesNavigator, useCase: Domain.SearchRepositoryUseCase) {
+    init(navigator: CommitsNavigator, useCase: Domain.CommitsUseCase,userName: String,repoName: String) {
         self.useCase = useCase
         self.navigator = navigator
+        self.userName = userName
+        self.repoName = repoName
     }
     
     func transform(input: Input) -> Output {
         let activityIndicator = ActivityIndicator()
         let errorTracker = ErrorTracker()
         
-        let repoList =  self.useCase.searchRepository(query: value).trackActivity(activityIndicator).trackError(errorTracker).asDriverOnErrorJustComplete()
+        let commitsList =  self.useCase.fetchCommits(useName: self.userName, repoName: self.repoName).trackActivity(activityIndicator).trackError(errorTracker).asDriverOnErrorJustComplete()
         .map{ result in
-            return result.items.compactMap({ (item) -> RepositoryCellViewModel in
-               return RepositoryCellViewModel(with: item)
+            return result.compactMap({ (item) -> CommitsCellViewModel in
+               return CommitsCellViewModel(with: item)
            })
            
         }
         
-        return Output(isFetching: activityIndicator.asDriver(), repositories: repoList  , error: errorTracker.asDriver())
+        let back = input.backTrigger.map { [unowned self]_ in
+            self.navigator.back()
+        }.mapToVoid()
+        
+        let profile = input.profileTrigger.map { [unowned self]_ in
+            self.navigator.toProfile()
+        }.mapToVoid()
+        
+        return Output(isFetching: activityIndicator.asDriver(), commits: commitsList, error: errorTracker.asDriver(), back: back, profile: profile)
     }
     
     

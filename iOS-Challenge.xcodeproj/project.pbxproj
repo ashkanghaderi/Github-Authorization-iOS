@@ -29,6 +29,9 @@
 		AD60782E24806A26002FE6C4 /* CommitViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD60782C24806A26002FE6C4 /* CommitViewCell.xib */; };
 		AD60783024806A41002FE6C4 /* CommitsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60782F24806A41002FE6C4 /* CommitsCellViewModel.swift */; };
 		AD60783224806DD7002FE6C4 /* CommitActorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60783124806DD7002FE6C4 /* CommitActorItem.swift */; };
+		AD607834248107D7002FE6C4 /* CommitsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD607833248107D7002FE6C4 /* CommitsUseCase.swift */; };
+		AD60783624810F4A002FE6C4 /* CommitsNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60783524810F4A002FE6C4 /* CommitsNetwork.swift */; };
+		AD60783824811071002FE6C4 /* CommitsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60783724811071002FE6C4 /* CommitsUseCase.swift */; };
 		AD6B0FA3247AD7DF004158B2 /* UseCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6B0FA2247AD7DF004158B2 /* UseCaseProvider.swift */; };
 		AD6B0FA5247AD95E004158B2 /* AuthorizationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6B0FA4247AD95E004158B2 /* AuthorizationUseCase.swift */; };
 		AD6B0FA7247ADEDB004158B2 /* RepositoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6B0FA6247ADEDB004158B2 /* RepositoriesModel.swift */; };
@@ -215,6 +218,9 @@
 		AD60782C24806A26002FE6C4 /* CommitViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommitViewCell.xib; sourceTree = "<group>"; };
 		AD60782F24806A41002FE6C4 /* CommitsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitsCellViewModel.swift; sourceTree = "<group>"; };
 		AD60783124806DD7002FE6C4 /* CommitActorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitActorItem.swift; sourceTree = "<group>"; };
+		AD607833248107D7002FE6C4 /* CommitsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitsUseCase.swift; sourceTree = "<group>"; };
+		AD60783524810F4A002FE6C4 /* CommitsNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitsNetwork.swift; sourceTree = "<group>"; };
+		AD60783724811071002FE6C4 /* CommitsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitsUseCase.swift; sourceTree = "<group>"; };
 		AD6B0FA2247AD7DF004158B2 /* UseCaseProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UseCaseProvider.swift; sourceTree = "<group>"; };
 		AD6B0FA4247AD95E004158B2 /* AuthorizationUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationUseCase.swift; sourceTree = "<group>"; };
 		AD6B0FA6247ADEDB004158B2 /* RepositoriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesModel.swift; sourceTree = "<group>"; };
@@ -468,6 +474,7 @@
 				AD6B0FA4247AD95E004158B2 /* AuthorizationUseCase.swift */,
 				AD6B0FA2247AD7DF004158B2 /* UseCaseProvider.swift */,
 				AD6B0FB6247B2C83004158B2 /* SearchRepositoryUseCase.swift */,
+				AD607833248107D7002FE6C4 /* CommitsUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -476,6 +483,7 @@
 			isa = PBXGroup;
 			children = (
 				AD6B0FB1247B1ACF004158B2 /* RepositorySearchNetwork.swift */,
+				AD60783524810F4A002FE6C4 /* CommitsNetwork.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -485,6 +493,7 @@
 			children = (
 				AD6B0FB4247B2C17004158B2 /* UseCaseProvider.swift */,
 				AD6B0FB8247B2FBF004158B2 /* SearchRepositoryUseCase.swift */,
+				AD60783724811071002FE6C4 /* CommitsUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -1226,6 +1235,7 @@
 				AD95A7BF247ABABD00B58056 /* ProfileNetworkModel.swift in Sources */,
 				AD95A7C3247ABE2B00B58056 /* AvatarModel.swift in Sources */,
 				AD6B0FB7247B2C83004158B2 /* SearchRepositoryUseCase.swift in Sources */,
+				AD607834248107D7002FE6C4 /* CommitsUseCase.swift in Sources */,
 				AD95A7BC247AB18D00B58056 /* AuthenticationStatus.swift in Sources */,
 				AD95A7B9247AB18D00B58056 /* ErrorTypes.swift in Sources */,
 				AD6B0FAF247B088C004158B2 /* UserModel.swift in Sources */,
@@ -1253,8 +1263,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD6B0FB2247B1ACF004158B2 /* RepositorySearchNetwork.swift in Sources */,
+				AD60783624810F4A002FE6C4 /* CommitsNetwork.swift in Sources */,
 				AD6B0FB9247B2FBF004158B2 /* SearchRepositoryUseCase.swift in Sources */,
 				AD95A7AD247AACD700B58056 /* Network.swift in Sources */,
+				AD60783824811071002FE6C4 /* CommitsUseCase.swift in Sources */,
 				AD95A7A8247AACD600B58056 /* EncodableExtension.swift in Sources */,
 				AD95A7A9247AACD600B58056 /* ResponseAnalytics.swift in Sources */,
 				AD95A7AA247AACD700B58056 /* DateFormatterExtension.swift in Sources */,

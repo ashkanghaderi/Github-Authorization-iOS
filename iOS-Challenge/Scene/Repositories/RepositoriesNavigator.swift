@@ -19,8 +19,8 @@ class RepositoriesNavigator {
     }
     
     
-    func toSelected(Option option:RepositoryCellViewModel) {
-       
+    func toCommits(userName: String,repoName: String) {
+        CommitsNavigator(services: services, navigationController: navigationController).setup(userName: userName, repoName: repoName)
     }
     
     

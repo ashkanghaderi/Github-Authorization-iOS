@@ -1,10 +1,6 @@
 import Foundation
-public enum CommitsModel: InteractiveModelType {
-    public struct Request: Codable {
-        
-    }
+public struct CommitsModel: Codable {
     
-    public struct Response: Codable {
-        public let commit: [CommitItem]
-    }
+    public let commit: CommitItem
+    
 }

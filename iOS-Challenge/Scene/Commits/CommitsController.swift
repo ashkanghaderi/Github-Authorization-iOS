@@ -19,19 +19,19 @@ class CommitsController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-         tableView.register(UINib(nibName: "RepositoryViewCell", bundle: nil), forCellReuseIdentifier: CellIds.cellId.rawValue)
+         tableView.register(UINib(nibName: "CommitViewCell", bundle: nil), forCellReuseIdentifier: CellIds.cellId.rawValue)
                
                bindData()
     }
 
     private func bindData(){
               assert(viewModel != nil)
-           let input = RepositoriesViewModel.Input(repositorySelection: tableView.rx.itemSelected.asDriver(), searchQuery: searchBar.rx.text.orEmpty.asDriver(),searchTrigger: searchBar.rx.textDidBeginEditing.asDriver())
+        let input = CommitsViewModel.Input(profileTrigger: self.profileBtn.rx.tap.asDriver(), backTrigger: self.backBtn.rx.tap.asDriver())
               let output = viewModel.transform(input: input)
           
-           [output.repositories.drive(tableView.rx.items(cellIdentifier: CellIds.cellId.rawValue, cellType: RepositoryViewCell.self)){ item, viewModel, cell in
+           [output.commits.drive(tableView.rx.items(cellIdentifier: CellIds.cellId.rawValue, cellType: CommitViewCell.self)){ item, viewModel, cell in
                cell.bindData(withViewModel: viewModel)
-               }
+            },output.back.drive(),output.profile.drive(),output.isFetching.drive(),output.error.drive()
                ].forEach { (item) in
                    item.disposed(by: disposeBag)
            }

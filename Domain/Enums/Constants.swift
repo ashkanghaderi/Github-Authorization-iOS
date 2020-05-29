@@ -25,7 +25,7 @@ public enum RepositoryRoute: String {
 
 public enum CommitRoute: String {
     
-    case commits = "repos/commits/"
+    case commits = "repos/"
     
     
     var path: String {

@@ -13,5 +13,9 @@ public final class UseCaseProvider: Domain.UseCaseProvider {
         return SearchRepositoryUseCase(network: networkProvider.makeSearchRepositoryNetwork())
     }
     
+    public func makeCommitsUseCase() -> Domain.CommitsUseCase {
+        return CommitsUseCase(network: networkProvider.makeCommitsNetwork())
+    }
+    
     
 }

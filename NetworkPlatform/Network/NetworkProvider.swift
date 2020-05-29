@@ -12,5 +12,11 @@ final class NetworkProvider {
         
 		return RepositorySearchNetwork(network: network)
 	}
+    
+    public func makeCommitsNetwork() -> CommitsNetwork {
+        let network = Network<[CommitsModel]>(apiEndpoint)
+        
+        return CommitsNetwork(network: network)
+    }
 
 }
