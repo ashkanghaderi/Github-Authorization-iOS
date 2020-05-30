@@ -20,6 +20,7 @@ target 'iOS-Challenge' do
   rx_swift
   pod 'RxDataSources', '~> 3.0'
   pod 'KeychainSwift'
+  pod 'Kingfisher'
   # Pods for iOS-Challenge
 
   target 'iOS-ChallengeTests' do

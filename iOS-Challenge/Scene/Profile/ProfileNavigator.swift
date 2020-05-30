@@ -11,9 +11,9 @@ class ProfileNavigator {
         self.navigationController = navigationController
     }
     
-    func setup(userName: String,repoName: String) {
+    func setup(canEdit: Bool,userName: String) {
         let profileVC = ProfileController(nibName: "ProfileController", bundle: nil)
-        profileVC.viewModel = ProfileViewModel(navigator: self, useCase: services.makeProfileUseCase(),userName: userName)
+        profileVC.viewModel = ProfileViewModel(navigator: self, useCase: services.makeProfileUseCase(), userName: userName, canEdit: canEdit)
         
         navigationController.pushViewController(profileVC, animated: true)
     }

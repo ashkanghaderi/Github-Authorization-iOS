@@ -12,7 +12,7 @@ final class CommitsViewModel: ViewModelType {
     private(set) var userName: String
     private(set) var repoName: String
     
-    init(navigator: CommitsNavigator, useCase: Domain.CommitsUseCase,userName: String,repoName: String) {
+    init(navigator: CommitsNavigator, useCase: Domain.CommitsUseCase,repoName: String,userName: String) {
         self.useCase = useCase
         self.navigator = navigator
         self.userName = userName
@@ -36,7 +36,7 @@ final class CommitsViewModel: ViewModelType {
         }.mapToVoid()
         
         let profile = input.profileTrigger.map { [unowned self]_ in
-            self.navigator.toProfile()
+            self.navigator.toProfile(canEdit: false,userName: self.userName )
         }.mapToVoid()
         
         return Output(isFetching: activityIndicator.asDriver(), commits: commitsList, error: errorTracker.asDriver(), back: back, profile: profile)

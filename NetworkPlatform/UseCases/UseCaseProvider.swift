@@ -17,5 +17,9 @@ public final class UseCaseProvider: Domain.UseCaseProvider {
         return CommitsUseCase(network: networkProvider.makeCommitsNetwork())
     }
     
+    public func makeProfileUseCase() -> Domain.ProfileUseCase {
+        return ProfileUseCase(network: networkProvider.makeProfileNetwork())
+    }
+    
     
 }

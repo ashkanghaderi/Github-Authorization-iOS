@@ -12,6 +12,7 @@ public enum Route {
     
     case RepositoryServiceRoute(RepositoryRoute)
     case CommitServiceRoute(CommitRoute)
+    case ProfileServiceRoute(ProfileRoute)
 }
 
 public enum RepositoryRoute: String {
@@ -33,6 +34,17 @@ public enum CommitRoute: String {
     }
 }
 
+public enum ProfileRoute: String {
+    
+    case profile = "users/"
+    
+    
+    var path: String {
+        return  self.rawValue
+    }
+}
+
+
 
 extension Route {
     public var url: String {
@@ -42,6 +54,9 @@ extension Route {
             
         case .CommitServiceRoute(let commitRoute):
             return commitRoute.path
+            
+        case .ProfileServiceRoute(let profileRoute):
+            return profileRoute.path
         }
     }
 }

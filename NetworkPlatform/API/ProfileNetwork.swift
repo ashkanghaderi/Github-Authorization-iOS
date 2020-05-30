@@ -11,10 +11,14 @@ public final class ProfileNetwork {
         self.network = network
     }
     
-   /* public func fetchProfile(useName: String,repoName: String) -> Observable<[CommitsModel]>{
-
-        let url = Route.CommitServiceRoute(.commits).url  + useName + "/" + repoName + "/commits"
+    public func saveProfile(user: UserModel) -> Observable<Bool>{
+        
+        return Observable.just(true)
+    }
+    
+    public func fetchProfile(userName: String) -> Observable<UserModel>{
+        let url = Route.ProfileServiceRoute(.profile).url  + userName
         return network.getItem(url)
-    }*/
+    }
     
 }

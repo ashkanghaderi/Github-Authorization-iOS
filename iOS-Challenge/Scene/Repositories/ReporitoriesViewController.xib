@@ -19,53 +19,31 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="iSS-dP-nuo">
+                    <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                    <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="56" id="Y0f-Tk-AFD"/>
+                    </constraints>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="O6E-RJ-fbs">
-                    <rect key="frame" x="0.0" y="109" width="414" height="787"/>
+                    <rect key="frame" x="0.0" y="100" width="414" height="796"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wYY-RL-RQq">
-                    <rect key="frame" x="0.0" y="-1" width="414" height="110"/>
-                    <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header" translatesAutoresizingMaskIntoConstraints="NO" id="jb7-DH-oK8">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
-                        </imageView>
-                        <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="iSS-dP-nuo">
-                            <rect key="frame" x="15" y="44" width="384" height="56"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="56" id="rZN-JJ-DU3"/>
-                            </constraints>
-                            <textInputTraits key="textInputTraits"/>
-                        </searchBar>
-                    </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <constraints>
-                        <constraint firstAttribute="trailing" secondItem="iSS-dP-nuo" secondAttribute="trailing" constant="15" id="FdE-Q6-cHS"/>
-                        <constraint firstAttribute="height" constant="110" id="Ldk-Mz-GDl"/>
-                        <constraint firstAttribute="trailing" secondItem="jb7-DH-oK8" secondAttribute="trailing" id="OCs-EM-7NV"/>
-                        <constraint firstItem="jb7-DH-oK8" firstAttribute="top" secondItem="wYY-RL-RQq" secondAttribute="top" id="Suo-7D-JRb"/>
-                        <constraint firstAttribute="bottom" secondItem="iSS-dP-nuo" secondAttribute="bottom" constant="10" id="ZCz-0x-YBD"/>
-                        <constraint firstItem="jb7-DH-oK8" firstAttribute="leading" secondItem="wYY-RL-RQq" secondAttribute="leading" id="h2x-5B-6Dr"/>
-                        <constraint firstItem="iSS-dP-nuo" firstAttribute="leading" secondItem="wYY-RL-RQq" secondAttribute="leading" constant="15" id="lYL-T5-yhz"/>
-                        <constraint firstAttribute="bottom" secondItem="jb7-DH-oK8" secondAttribute="bottom" id="yCC-ar-2ZL"/>
-                    </constraints>
-                </view>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wYY-RL-RQq" secondAttribute="trailing" id="8BM-OV-ddu"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="O6E-RJ-fbs" secondAttribute="trailing" id="95R-bi-UpI"/>
-                <constraint firstItem="O6E-RJ-fbs" firstAttribute="top" secondItem="wYY-RL-RQq" secondAttribute="bottom" id="HpV-mk-Qdh"/>
-                <constraint firstItem="wYY-RL-RQq" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="-45" id="P1g-d5-mYM"/>
-                <constraint firstItem="wYY-RL-RQq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Tfk-ye-d0B"/>
-                <constraint firstItem="O6E-RJ-fbs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gvj-Bm-iWc"/>
-                <constraint firstAttribute="bottom" secondItem="O6E-RJ-fbs" secondAttribute="bottom" id="rPX-nS-zCP"/>
+                <constraint firstItem="iSS-dP-nuo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="7M7-pC-aAC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="iSS-dP-nuo" secondAttribute="trailing" id="HcI-ye-nA1"/>
+                <constraint firstItem="iSS-dP-nuo" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="OK8-qr-ATs"/>
+                <constraint firstItem="O6E-RJ-fbs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Y81-Eg-c1d"/>
+                <constraint firstAttribute="bottom" secondItem="O6E-RJ-fbs" secondAttribute="bottom" id="Y8N-2y-MV7"/>
+                <constraint firstItem="O6E-RJ-fbs" firstAttribute="top" secondItem="iSS-dP-nuo" secondAttribute="bottom" id="tm1-P6-cHa"/>
+                <constraint firstItem="O6E-RJ-fbs" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="u3f-Qo-diR"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="133" y="87"/>
         </view>
     </objects>
-    <resources>
-        <image name="header" width="540" height="225"/>
-    </resources>
 </document>

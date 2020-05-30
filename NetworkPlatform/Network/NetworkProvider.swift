@@ -18,5 +18,12 @@ final class NetworkProvider {
         
         return CommitsNetwork(network: network)
     }
+    
+    public func makeProfileNetwork() -> ProfileNetwork {
+        let network = Network<UserModel>(apiEndpoint)
+        
+        return ProfileNetwork(network: network)
+    }
+
 
 }

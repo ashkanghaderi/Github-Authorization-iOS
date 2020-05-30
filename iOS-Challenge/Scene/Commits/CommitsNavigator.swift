@@ -11,9 +11,9 @@ class CommitsNavigator {
         self.navigationController = navigationController
     }
     
-    func setup(userName: String,repoName: String) {
+    func setup(repoName: String,userName: String) {
         let commitVC = CommitsController(nibName: "CommitsController", bundle: nil)
-        commitVC.viewModel = CommitsViewModel(navigator: self, useCase: services.makeCommitsUseCase(),userName: userName,repoName: repoName)
+        commitVC.viewModel = CommitsViewModel(navigator: self, useCase: services.makeCommitsUseCase(),repoName: repoName,userName: userName)
         
         navigationController.pushViewController(commitVC, animated: true)
     }
@@ -22,7 +22,9 @@ class CommitsNavigator {
         navigationController.popViewController(animated: true)
     }
     
-    func toProfile(){}
+    func toProfile(canEdit: Bool,userName: String){
+        ProfileNavigator(services: services, navigationController: navigationController).setup(canEdit: canEdit, userName: userName)
+    }
       
     func toError(error: Error) {
         

@@ -6,4 +6,6 @@ public protocol UseCaseProvider {
     
     func makeCommitsUseCase() -> CommitsUseCase
     
+    func makeProfileUseCase() -> ProfileUseCase
+    
 }

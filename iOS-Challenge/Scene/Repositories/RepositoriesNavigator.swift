@@ -20,7 +20,7 @@ class RepositoriesNavigator {
     
     
     func toCommits(userName: String,repoName: String) {
-        CommitsNavigator(services: services, navigationController: navigationController).setup(userName: userName, repoName: repoName)
+        CommitsNavigator(services: services, navigationController: navigationController).setup(repoName: repoName,userName: userName)
     }
     
     
