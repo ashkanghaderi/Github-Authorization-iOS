@@ -1,11 +1,3 @@
-//
-//  String+CustomTools.swift
-//  BarandehShow
-//
-//  Created by Behrad Kazemi on 12/31/18.
-//  Copyright © 2018 Behrad Kazemi. All rights reserved.
-//
-
 import Foundation
 import UIKit
 extension String {
